@@ -1,0 +1,18 @@
+{
+  "name": "gell-calendar",
+  "version": "0.0.1",
+  "description": "gell-based approach to working with date ranges",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "keywords": [
+    "gell"
+  ],
+  "author": "Daniel Gay",
+  "license": "ISC",
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "gell": "^1.18.0"
+  }
+}
