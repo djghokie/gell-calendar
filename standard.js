@@ -1,5 +1,6 @@
 const {
-	startOfWeek
+	startOfDay,
+	startOfWeek,
 } = require('date-fns');
 
 const day = {
@@ -8,7 +9,8 @@ const day = {
 	icon: 'fas fa-calendar-day',
 	sortFormat: 'yyyy-MM-dd',
 	nameFormat: 'PPP',
-	stepAttribute: 'days'
+    startF: startOfDay,
+	durationAttribute: 'days'
 }
 
 const week = {
@@ -28,7 +30,7 @@ const month = {
 	icon: 'fas fa-calendar',
 	sortFormat: 'yyyy-MM',
 	nameFormat: 'PPP',
-	stepAttribute: 'months'
+	durationAttribute: 'months'
 }
 
 module.exports = {

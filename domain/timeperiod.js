@@ -36,6 +36,7 @@ class TimePeriod {
 
         let currentStart = this.def.startF(start).getTime();
         do {
+            // console.debug('#####', new Date(currentStart), new Date(endTs), step);
             /**
              * WIP: calendar_ is really a projection of a time period
              *  - what attributes should be included?
