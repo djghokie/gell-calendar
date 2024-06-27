@@ -17,7 +17,7 @@ const week = {
 	icon: 'fas fa-calendar-week',
 	sortFormat: 'yyyy-ww',
 	// WEEK: ts => `${format(ts, 'yyyy')}-W${format(ts, 'ww')}`,
-	nameFormat: 'PPP',
+	nameFormat: 'MMMM d',
     startF: startOfWeek,
     durationAttribute: 'weeks'
 }

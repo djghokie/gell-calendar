@@ -12,21 +12,21 @@ describe('week time period', function() {
     })
 
     describe('forward iterator', function() {
+        let $forward;
+
         beforeEach(function() {
+            $forward = week_.forward(new Date('June 19, 2024 10:00').getTime(), null, { yieldSnapshots: true });
         })
     
         it('generates first calendar correctly', function() {
-            const $forward = week_.forward(new Date('June 19, 2024 10:00').getTime());
-
             // const first_ = $forward.next().value;
             const first$ = $forward.next().value;
 
             assert.strictEqual(first$.startTs, new Date("June 16, 2024").getTime());
+            assert.strictEqual(first$.name, "June 16");
         })
 
         it('generates second calendar correctly', function() {
-            const $forward = week_.forward(new Date('June 19, 2024 10:00').getTime());
-
             $forward.next();
             // const first_ = $forward.next().value;
             const second$ = $forward.next().value;

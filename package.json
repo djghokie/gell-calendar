@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "date-fns": "^3.6.0",
-    "gell": "^1.18.0"
+    "gell": "^1.18.0",
+    "gell-domain": "^0.2.1"
   }
 }
