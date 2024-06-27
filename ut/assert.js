@@ -1,6 +1,8 @@
 const assert = require('assert');
 const _ = require('lodash');
 
+const { dateFromArg } = require('../util');
+
 const {
 	isValid,
 	isSameDay,
@@ -8,15 +10,6 @@ const {
 	add,
 	format
 } = require('date-fns');
-
-function dateFromArg(arg) {
-	assert(arg);
-
-	if (_.isDate(arg)) return arg;
-	if (_.isNumber(arg) || _.isString(arg)) return new Date(arg);
-
-	throw new Error(`invalid date argument ${arg}`);
-}
 
 const assertTimestamp = {
 	valid: ts => {

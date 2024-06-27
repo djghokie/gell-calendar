@@ -1,33 +1,30 @@
 const assert = require('assert');
 
-const { format } = require('date-fns');
+const { State } = require('gell');
+
+const timeperiod = require('./timeperiod');
 
 /**
  * WIP: probably change this name to catalog
  */
-class TimePeriods {
+class TimePeriods extends State {
 
-    defs=[]
+    constructor(...defs) {
+        super();
 
-    constructor() {}
+        this.add(...defs);
+    }
 
-    add(def) {
-        this.defs.push(def);
+    add(...defs) {
+        defs.forEach(def => this.set(def.id, timeperiod.materialize(def)));
     }
 
 	instance(timePeriod, dateTime=Date.now()) {
         assert(timePeriod);
 
-		const tp = this.defs.find(t => t.id === timePeriod);
+        const tp_ = this.get(timePeriod);
 
-        if (tp) {
-            return {
-                label: tp.label,
-                icon: tp.icon,
-                name: format(dateTime, tp.nameFormat),
-                sortValue: format(dateTime, tp.sortFormat),
-            }
-        }
+        if (tp_) return tp_.instance(dateTime);
 	}
 
 }
